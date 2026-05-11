@@ -1,6 +1,6 @@
 ## RE-IMPLEMENTATION DETAILS
 
-Fine-tunes RoBERTa-large on SST-2 with LoRA adapters injected into query and key matrices, trained for 6 epochs, lr=1Ã—10â»â´, AdamW, cosine schedule. Also implements LoRA3 (Î”W = BCA), adding a square matrix C between A and B for extra low-rank computation at very low parameter cost.
+Fine-tunes RoBERTa-large on SST-2 with LoRA adapters injected into query and key matrices, trained for 6 epochs, lr=1*e^-4, AdamW, cosine schedule. Also implements LoRA3 (Î”W = BCA), adding a square matrix C between A and B for extra low-rank computation at very low parameter cost.
 
 ## REPRODUCTION STEPS
 
@@ -26,13 +26,12 @@ run_all_experiments(data_used=0.5)  # set 1.0 for full dataset
 | LoRA (AÂ·B) | 8 | 788,482 (0.222%) | 95.87% |
 | LoRA3 (AÂ·CÂ·B) | 4 | 396,034 (0.111%) | 95.41% |
 | LoRA3 (AÂ·CÂ·B) | 8 | 791,554 (0.222%) | 95.87% |
-| **Paper (Hu et al.)** | **â€”** | **~0.2%** | **96.2 Â± 0.5%** |
 
 ---
 
 ## CONCLUSION
 
-LoRA adapters are effective at reducing parameters while maintaining high accuracy â€” best result of 95.64% achieved with 011% of RoBERTa-large's 355M parameters, which is withing the error bound of the paper.
+LoRA adapters are effective at reducing parameters while maintaining high accuracy best result of 95.64% achieved with 011% of RoBERTa-large's 355M parameters, which is withing the error bound of the paper.
 
 ---
 
