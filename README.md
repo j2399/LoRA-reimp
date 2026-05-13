@@ -33,9 +33,9 @@ Table 1. Reference results from (Hu et al., 2022) showing accuracy on SST-2.
 
 The LoRA method reduces the number of trainable parameters by freezing the pretrained weight matrix $W_0$ (size $d \times k$) and trains only two low-rank matrices A (size $r \times k$) and B (size $d \times r$), where $r<<min(d,k)$. The resulting weight update is $W_0+BA$. In (Hu et al., 2022), the low-rank is $r=8$.
 
-<img src="assets/AB.png" width="300"/>
+<img src="assets/AB.png" width="400"/>
 Figure 1. Forward pass in LoRA.
- 
+<br>
 
 We fine-tune RoBERTa-Large on the SST-2 sentiment classification task from the GLUE benchmark. Dataset via HuggingFace.
 LoRA adapters are injected into query and key matrices, in each layer. Trained for 6 epochs, learning rate $1*e^{-4}$, AdamW, cosine schedule. Gradient clipping is applied at norm 1.0. Code uses PyTorch methods. Evaluation uses classification accuracy on the SST-2 validation set.
