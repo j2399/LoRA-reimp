@@ -13,7 +13,7 @@ Natural Language Processing utilizes adapting pretrained LLMs to multiple tasks 
 
 The objective is to reproduce the accuracy of $96.2 \pm 0.5$% on the SST-2 dataset when applying LoRA (0.8M trainable parameters) to RoBERTa-Large, as reported in Table 2 in the paper (Hu et al., 2022). This is within 0.5 of the accuracy of the full fine-tuned model (355M trainable parameters), showing LoRA achieves full accuracy with far fewer (about 0.2%) trainable parameters. This result demonstrates LoRA's effectiveness clearly.
 
-![Table 1](assests/Tuning20%table.png)
+<img src="assets/table.png" width="600"/>
 Table 1. Reference results from (Hu et al., 2022) showing accuracy on SST-2.
 
 ## 3. GitHub CONTENTS
@@ -66,12 +66,12 @@ Top validation accuracy achieved is 96.56% on SST-2 using low-rank r=4. Also ach
 
 Results:
 
-| Model | Rank r| Trainable Params | Val Accuracy |
+| Model | Rank r | Trainable Params | Val Accuracy |
 |---|---|---|---|
-| LoRA re-implemnted | 4 | 395,266 (0.111%) | 95.64% |
-| LoRA  re-implemnted | 8 | 788,482 (0.222%) | 95.87% |
-| LoRA with an additional third matrix | 4 | 396,034 (0.111%) | 95.41% |
-| LoRA with an additional third matrix | 8 | 791,554 (0.222%) | 95.87% |
+| LoRA re-implementation | 4 | 395,266 (0.111%) | 96.56% |
+| LoRA re-implementation | 8 | 788,482 (0.222%) | 96.10% |
+| LoRA with additional matrix C | 4 | 396,034 (0.111%) | 95.41% |
+| LoRA with additional matrix C | 8 | 791,554 (0.222%) | 95.64% |
 
 
 
