@@ -13,7 +13,7 @@ Natural Language Processing utilizes adapting pretrained LLMs to multiple tasks 
 
 The objective is to reproduce the accuracy of $96.2 \pm 0.5$ on the SST-2 dataset when applying LoRA (0.8M trainable parameters) to RoBERTa-Large, as reported in Table 2 in the paper (Hu et al., 2022). This is within 0.5 of the accuracy of the full fine-tuned model (355M trainable parameters), showing LoRA achieves full accuracy with far fewer (about 0.2%) trainable parameters. This result demonstrates LoRA's effectiveness clearly.
 
-<img src="images/table.png" width="400"/>
+<img src="images/table.png" width="300"/>
 Table 1. Reference results from (Hu et al., 2022) showing accuracy on SST-2.
 
 ## 3. GitHub CONTENTS
@@ -85,12 +85,12 @@ LoRA adapters drastically reduce the number of trainable parameters, while maint
 ## 8. REFERENCES
 
 
-- Hu, E.J. et al. *LoRA.* ICLR 2022. [arXiv:2106.09685](https://arxiv.org/abs/2106.09685)
-- Liu, Y. et al. *RoBERTa.* 2019, [arXiv:1907.11692](https://arxiv.org/abs/1907.11692)
-- Loshchilov, I. al. *Decoupled Weight Decay Regularization.* ICLR 2019, [arXiv:1711.05101](https://arxiv.org/abs/1711.05101).
-- Paszke, A. et al. *PyTorch: An Imperative Style, High-Performance Deep Learning Library.* NeurIPS 2019. 
-- Socher, R. et al. *Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank.* EMNLP, pp. 1631-1642, 2013.
-- Wang, A. et al. *GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding.* EMNLP BlackboxNLP Workshop, 2018.
+- Hu, E.J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., Wang, L., and Chen, W. *LoRA: Low-Rank Adaptation of Large Language Models.* ICLR 2022. [arXiv:2106.09685](https://arxiv.org/abs/2106.09685)
+- Liu, Y., Ott, M., Goyal, N., et al. *RoBERTa: A Robustly Optimized BERT Pretraining Approach.* 2019, [arXiv:1907.11692](https://arxiv.org/abs/1907.11692)
+- Loshchilov, I. and Hutter, F. *Decoupled Weight Decay Regularization.* ICLR 2019, [arXiv:1711.05101](https://arxiv.org/abs/1711.05101).
+- Paszke, A., Gross, S., Massa, F., et al.  *PyTorch: An Imperative Style, High-Performance Deep Learning Library.* NeurIPS 2019. 
+- Socher, R., Perelygin, A., Wu, J., Chuang, J., Manning, C.D., Ng, A., and Potts, C. *Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank.* EMNLP, pp. 1631-1642, 2013.
+- Wang, A., Singh, A., Michael, J., Hill, F., Levy, O., and Bowman, S.R. *GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding.* EMNLP BlackboxNLP Workshop, 2018.
 - Wolf, T. et al. *Transformers: State-of-the-Art Natural Language Processing.* EMNLP System Demonstrations, pp. 38-45, 2020.
 
 
