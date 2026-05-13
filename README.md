@@ -11,7 +11,7 @@ Natural Language Processing utilizes adapting pretrained LLMs to multiple tasks 
 ## 2. CHOSEN RESULT
 
 
-The objective is to reproduce the accuracy of $96.2 \pm 0.5$% on the SST-2 dataset when applying LoRA (0.8M trainable parameters) to RoBERTa-Large, as reported in Table 2 in the paper (Hu et al., 2022). This is within 0.5 of the accuracy of the full fine-tuned model (355M trainable parameters), showing LoRA achieves full accuracy with far fewer (about 0.2%) trainable parameters. This result demonstrates LoRA's effectiveness clearly.
+The objective is to reproduce the accuracy of $96.2 \pm 0.5$ on the SST-2 dataset when applying LoRA (0.8M trainable parameters) to RoBERTa-Large, as reported in Table 2 in the paper (Hu et al., 2022). This is within 0.5 of the accuracy of the full fine-tuned model (355M trainable parameters), showing LoRA achieves full accuracy with far fewer (about 0.2%) trainable parameters. This result demonstrates LoRA's effectiveness clearly.
 
 <img src="assets/table.png" width="600"/>
 Table 1. Reference results from (Hu et al., 2022) showing accuracy on SST-2.
@@ -38,7 +38,7 @@ Figure 1. Forward pass in LoRA.
 <br><br>
 
 We fine-tune RoBERTa-Large on the SST-2 sentiment classification task from the GLUE benchmark. Dataset via HuggingFace.
-LoRA adapters are injected into query and key matrices, in each layer. Trained for 6 epochs, learning rate $1*e^{-4}$, AdamW, cosine schedule. Gradient clipping is applied at norm 1.0. Code uses PyTorch methods. Evaluation uses classification accuracy on the SST-2 validation set.
+LoRA adapters are injected into query and key matrices, in each layer. Trained for 6 epochs, learning rate $1\times 10^{-4}$, AdamW, cosine schedule. Gradient clipping is applied at norm 1.0. Code uses PyTorch methods. Evaluation uses classification accuracy on the SST-2 validation set.
 
 Also implements a modification of LoRA with an additional square matrix C between A and B for extra low-rank computation at very low parameter cost. Update is $W_0+ BCA$.
 
@@ -62,7 +62,7 @@ run_all_experiments(data_used=0.5)  # set 1.0 for full dataset
 ## 6. RESULTS / INSIGHTS
 
 
-Top validation accuracy achieved is 96.56% on SST-2 using low-rank r=4. Also achieved 96.1% accuracy with r=8. Both of these are within the 0.5 error range of the original paper's (Hu et al., 2022) accuracy, which is $96.2_{\pm .5}$% for  r=8 (see Table 1).
+Top validation accuracy achieved is 96.56% on SST-2 using low-rank r=4. Also achieved 96.1% accuracy with r=8. Both of these are within the 0.5 error range of the original paper's (Hu et al., 2022) accuracy, which is $96.2_{\pm .5}$ for  r=8 (see Table 1).
 
 Results:
 
@@ -88,10 +88,10 @@ LoRA adapters drastically reduce the number of trainable parameters, while maint
 - Hu, E.J. et al. *LoRA.* ICLR 2022. [arXiv:2106.09685](https://arxiv.org/abs/2106.09685)
 - Liu, Y. et al. *RoBERTa.* 2019, [arXiv:1907.11692](https://arxiv.org/abs/1907.11692)
 - Loshchilov, I. al. *Decoupled Weight Decay Regularization.* ICLR 2019, [arXiv:1711.05101](https://arxiv.org/abs/1711.05101).
-- Paszke, A. et al. *PyTorch.* NeurIPS 2019.
+- Paszke, A. et al. *PyTorch: An Imperative Style, High-Performance Deep Learning Library.* NeurIPS 2019. 
 - Socher, R. et al. *Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank.* EMNLP, pp. 1631-1642, 2013.
 - Wang, A. et al. *GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding.* EMNLP BlackboxNLP Workshop, 2018.
-- Wolf, T. et al. *HuggingFace Transformers.* EMNLP System Demonstrations, pp. 38-45, 2020.
+- Wolf, T. et al. *Transformers: State-of-the-Art Natural Language Processing.* EMNLP System Demonstrations, pp. 38-45, 2020.
 
 
 ## 9. ACKNOWLEDGEMENTS
