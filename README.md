@@ -13,7 +13,7 @@ Natural Language Processing utilizes adapting pretrained LLMs to multiple tasks 
 
 The objective is to reproduce the accuracy of $96.2 \pm 0.5$% on the SST-2 dataset when applying LoRA (0.8M trainable parameters) to RoBERTa-Large, as reported in Table 2 in the paper (Hu et al., 2022). This is within 0.5 of the accuracy of the full fine-tuned model (355M trainable parameters), showing LoRA achieves full accuracy with far fewer (about 0.2%) trainable parameters. This result demonstrates LoRA's effectiveness clearly.
 
-![Table 1](assests/table.png)
+![Table 1](assests/Tuning20%table.png)
 Table 1. Reference results from (Hu et al., 2022) showing accuracy on SST-2.
 
 ## 3. GitHub CONTENTS
@@ -33,7 +33,7 @@ Table 1. Reference results from (Hu et al., 2022) showing accuracy on SST-2.
 
 The LoRA method reduces the number of trainable parameters by freezing the pretrained weight matrix $W_0$ (size $d \times k$) and trains only two low-rank matrices A (size $r \times k$) and B (size $d \times r$), where $r<<min(d,k)$. The resulting weight update is $W_0+BA$. In (Hu et al., 2022), the low-rank is $r=8$.
 
-![Figure 1](assests/AB.png)
+![Figure 1](assests/Tuning10%AB.png)
 Figure 1. Forward pass in LoRA.
 
 
