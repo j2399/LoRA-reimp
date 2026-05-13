@@ -35,7 +35,7 @@ The LoRA method reduces the number of trainable parameters by freezing the pretr
 
 <img src="assets/AB.png" width="400"/>
 Figure 1. Forward pass in LoRA.
-<br>
+<br><br>
 
 We fine-tune RoBERTa-Large on the SST-2 sentiment classification task from the GLUE benchmark. Dataset via HuggingFace.
 LoRA adapters are injected into query and key matrices, in each layer. Trained for 6 epochs, learning rate $1*e^{-4}$, AdamW, cosine schedule. Gradient clipping is applied at norm 1.0. Code uses PyTorch methods. Evaluation uses classification accuracy on the SST-2 validation set.
