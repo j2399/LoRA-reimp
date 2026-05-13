@@ -59,7 +59,7 @@ run_all_experiments(data_used=0.5)  # set 1.0 for full dataset
 ```
 
 
-## 6. RESULTS / INSIGHTS
+## 6. RESULTS
 
 
 Top validation accuracy achieved is 96.56% on SST-2 using low-rank r=4. Also achieved 96.1% accuracy with r=8. Both of these are within the 0.5 error range of the original paper's (Hu et al., 2022) accuracy, which is $96.2_{\pm .5}$ for  r=8 (see Table 1).
